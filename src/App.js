@@ -1,12 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
-    <div>
+    <Container className="background" fluid>
       Testing
-    </div>
+    </Container>
   );
 }
 
