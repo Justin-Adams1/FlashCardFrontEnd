@@ -28,16 +28,20 @@ class App extends React.Component {
   render() {
     return (
       <Container className="background" fluid>
-        <Container className="mainDisplay">
+        <Container >
           <Row>
-            <Col>
+            <Col sm={{ span: 3, offset: 2}} className="collectionElement">
               <Collection />
             </Col>
-            <Col>
+            <Col sm={{ span: 5, offset: 1 }}>
               <Menu />
             </Col>
           </Row>
-          <Card />
+          <Row>
+            <Col md={{ span: 8, offset: 2 }} className="cardElement">
+              <Card/>
+            </Col>
+          </Row>
         </Container>
       </Container>
     );

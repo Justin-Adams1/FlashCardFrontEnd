@@ -1,0 +1,7 @@
+.menuElement {
+    border-style:ridge;
+    border-width: 5px;
+    background-color: white;
+    margin-top: 5%;
+    width:100px;
+}
