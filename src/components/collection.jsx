@@ -1,14 +1,14 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './collection.css';
 
 class Collection extends React.Component {
   render() {
     return (
-      <Container fluid>
-        <div>Current Collection</div>
-      </Container>
+      <Carousel className="carouselStyle">
+        {this.props.buildCollectionSlide(this.props.data)}
+      </Carousel>
     );
   }
 }
