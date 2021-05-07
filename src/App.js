@@ -33,7 +33,6 @@ class App extends React.Component {
   }
 
   selectCollection(collection) {
-    // console.log("PassedCollection", collection);
     this.setState({ cardSelection: collection });
   }
 
@@ -52,19 +51,20 @@ class App extends React.Component {
   }
 
   buildCard(cardsObject) {
-    console.log("BuildCard", cardsObject);
-    const collectionResult = cardsObject.cards.map((card) => {
-      return (
-        <Carousel.Item key={card.id}>
-          <h2 className="nameStyle">{card.title}</h2>
-          <h4 className="textStyle">
-            {card.definitionOne}
-            {card.definitionTwo}
-          </h4>
-        </Carousel.Item>
-      );
-    });
-    return collectionResult;
+    if (cardsObject.cards) {
+      const collectionResult = cardsObject.cards.map((card) => {
+        return (
+          <Carousel.Item key={card.id}>
+            <h2 className="nameStyle">{card.title}</h2>
+            <h4 className="textStyle">
+              {card.definitionOne}
+              {card.definitionTwo}
+            </h4>
+          </Carousel.Item>
+        );
+      });
+      return collectionResult;
+    }
   }
 
   componentDidMount() {
@@ -84,9 +84,7 @@ class App extends React.Component {
                 />
               </Col>
               <Col sm={{ span: 5, offset: 1 }}>
-                <Menu 
-                  data={this.state.cardSelection}
-                />
+                <Menu data={this.state.cardSelection} />
               </Col>
             </Row>
             <br />
@@ -95,7 +93,7 @@ class App extends React.Component {
               <Col md={{ span: 7, offset: 2 }}>
                 <Card
                   data={this.state.cardSelection}
-                  buildCard={() => this.buildCard}
+                  buildCard={this.buildCard}
                 />
               </Col>
             </Row>
