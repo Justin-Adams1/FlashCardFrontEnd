@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './collection.css';
+import "./collection.css";
 
 class Collection extends React.Component {
   render() {

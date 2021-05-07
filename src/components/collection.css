@@ -1,8 +1,36 @@
 .carouselStyle{
-    font-size: 10px;
+    font-size: 20px;
     text-align: center;
     border-style:ridge;
+    border-width: 5px;
+    border-color:black;
     background-color: white;
-    height: 75px;
-    width: 250px;
+    height: 100%;
+    width: 100%;
+}
+.carousel-indicators li{
+    display: none;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  background-image: none;
+  opacity: 100%;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: black;
 }

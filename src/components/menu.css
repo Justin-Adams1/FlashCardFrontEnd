@@ -1,7 +1,8 @@
 .menuElement {
     border-style:ridge;
     border-width: 5px;
+    border-color:black;
     background-color: white;
     margin-top: 5%;
-    width:100px;
+    width:170px;
 }

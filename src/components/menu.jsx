@@ -1,23 +1,73 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import axios from 'axios';
+import { Container, Row,} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./menu.css";
 
 class Menu extends React.Component {
+
+    async deleteCard() {
+        try {
+          await axios.delete("http://localhost:5000/api/collections/" + this.props.data._id + "/");
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+    async deleteCollection(collectionId) {
+        try {
+        await axios.delete("http://localhost:5000/api/collections/" + this.props.data._id);
+        } catch (error) {
+        console.log(error);
+        }
+    }
+
+    async modifyCollection() {
+        try {
+        await axios.delete("http://localhost:5000/api/collections/");
+        } catch (error) {
+        console.log(error);
+        }
+    }
+    
+    async modifyCard() {
+        try {
+        await axios.delete("http://localhost:5000/api/collections/");
+        } catch (error) {
+        console.log(error);
+        }
+    }
+    
+    async addCollection() {
+        try {
+        await axios.delete("http://localhost:5000/api/collections/");
+        } catch (error) {
+        console.log(error);
+        }
+    }
+    
+    async addCard() {
+        try {
+        await axios.delete("http://localhost:5000/api/collections/");
+        } catch (error) {
+        console.log(error);
+        }
+    }
+
   render() {
     return (
       <Container fluid>
         <Row>
-          <Col className="menuElement">ADD Collection</Col>
-          <Col className="menuElement">ADD Card</Col>
+            <button className="menuElement">ADD Collection</button>
+            <button className="menuElement">ADD Card</button>
         </Row>
         <Row>
-          <Col className="menuElement">MODIFY Collection</Col>
-          <Col className="menuElement">MODIFY Card</Col>
+            <button className="menuElement">MODIFY Collection</button>
+            <button className="menuElement">MODIFY Card</button>
         </Row>
         <Row>
-          <Col className="menuElement">DELETE Collection</Col>
-          <Col className="menuElement">DELETE Card</Col>
+            <button className="menuElement" onClick={() => this.deleteCollection(this.props.id)}>DELETE Collection</button>
+            <button className="menuElement">DELETE Card</button>
         </Row>
       </Container>
     );
