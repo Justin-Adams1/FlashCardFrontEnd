@@ -57,8 +57,8 @@ class App extends React.Component {
           <Carousel.Item key={card.id}>
             <h2 className="nameStyle">{card.title}</h2>
             <h4 className="textStyle">
-              {card.definitionOne}
-              {card.definitionTwo}
+              <li>{card.definitionOne}</li>
+              <li>{card.definitionTwo}</li>
             </h4>
           </Carousel.Item>
         );
