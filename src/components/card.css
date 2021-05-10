@@ -13,10 +13,14 @@
     border-color:black;
     background-color: white;
     height: 200px;
-    width: 500px;
+    width: 600px;
 }
 .carouselCollection{
     min-height : 100px;
     max-height : 100px;
     width : 100%;
 }
+
+.cardCountStyle {
+    text-align: right;
+  }

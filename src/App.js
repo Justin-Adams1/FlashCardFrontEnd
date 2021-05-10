@@ -59,6 +59,7 @@ class App extends React.Component {
             <h4 className="textStyle">
               <li>{card.definitionOne}</li>
               <li>{card.definitionTwo}</li>
+            <p className="cardCountStyle">{(cardsObject.cards.indexOf(card))+1}/{cardsObject.cards.length}</p>
             </h4>
           </Carousel.Item>
         );
