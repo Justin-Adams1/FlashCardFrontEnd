@@ -12,7 +12,7 @@
     border-width: 5px;
     border-color:black;
     background-color: white;
-    height: 200px;
+    height: 220px;
     width: 600px;
 }
 .carouselCollection{
@@ -23,4 +23,7 @@
 
 .cardCountStyle {
     text-align: right;
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }

@@ -54,13 +54,20 @@ class App extends React.Component {
     if (cardsObject.cards) {
       const collectionResult = cardsObject.cards.map((card) => {
         return (
-          <Carousel.Item key={card.id}>
-            <h2 className="nameStyle">{card.title}</h2>
-            <h4 className="textStyle">
-              <li>{card.definitionOne}</li>
-              <li>{card.definitionTwo}</li>
-            <p className="cardCountStyle">{(cardsObject.cards.indexOf(card))+1}/{cardsObject.cards.length}</p>
-            </h4>
+          <Carousel.Item key={card.id}>    
+          <h2 className="nameStyle">{card.title}</h2>        
+            <div>
+                {
+                    this.state.show? <div>
+                    <h4 className="textStyle">
+                      <li>{card.definitionOne}</li>
+                      <li>{card.definitionTwo}</li>
+                    </h4>
+                    </div> : null
+                }
+                <button onClick={()=>{this.setState({show:!this.state.show})}}>{ this.state.show? 'Hide' : 'Show'}</button>
+            </div>
+          <p className="cardCountStyle">{(cardsObject.cards.indexOf(card))+1}/{cardsObject.cards.length}</p>
           </Carousel.Item>
         );
       });
