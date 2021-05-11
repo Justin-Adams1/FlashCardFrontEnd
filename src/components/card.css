@@ -12,7 +12,7 @@
     border-width: 5px;
     border-color:black;
     background-color: white;
-    height: 220px;
+    height: 260px;
     width: 600px;
 }
 .carouselCollection{
@@ -27,3 +27,16 @@
     top: 0px;
     right: 0px;
   }
+  
+.deleteCard {
+    text-align: left;
+    position: absolute;
+    top: 0px;
+    left: 130px;
+  }
+.modifyCard {
+    text-align: left;
+    position: absolute;
+    top: 0px;
+    left: 70px;
+}

@@ -9,12 +9,32 @@ class Menu extends React.Component {
     return (
       <Container fluid>
         <Row>
-          <button className="menuElement">ADD Collection</button>
-          <button className="menuElement">ADD Card</button>
+          <button
+            type="button"
+            className="menuElement"
+            data-toggle="modal"
+            data-target="#ModalAddCollection"
+          >
+            ADD Collection
+          </button>
+          <button
+            type="button"
+            className="menuElement"
+            data-toggle="modal"
+            data-target="#ModalAddCard"
+          >
+            ADD Card
+          </button>
         </Row>
         <Row>
-          <button className="menuElement">MODIFY Collection</button>
-          <button className="menuElement">MODIFY Card</button>
+          <button
+            type="button"
+            className="menuElement"
+            data-toggle="modal"
+            data-target="#ModalModifyCollection"
+          >
+            MODIFY Collection
+          </button>
         </Row>
         <Row>
           <button
@@ -23,20 +43,9 @@ class Menu extends React.Component {
           >
             DELETE Collection
           </button>
-          <button className="menuElement">DELETE Card</button>
         </Row>
       </Container>
     );
-  }
-
-  async deleteCard() {
-    try {
-      await axios.delete(
-        "http://localhost:5000/api/collections/" + this.props.data._id + "/"
-      );
-    } catch (error) {
-      console.log(error);
-    }
   }
 
   async deleteCollection(collectionId) {
@@ -50,32 +59,27 @@ class Menu extends React.Component {
   }
 
   async modifyCollection() {
+    //capture form data -- Collection Name
     try {
-      await axios.delete("http://localhost:5000/api/collections/");
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async modifyCard() {
-    try {
-      await axios.delete("http://localhost:5000/api/collections/");
+      await axios.put("http://localhost:5000/api/collections/");
     } catch (error) {
       console.log(error);
     }
   }
 
   async addCollection() {
+    //capture form data -- Collection Name
     try {
-      await axios.delete("http://localhost:5000/api/collections/");
+      await axios.post("http://localhost:5000/api/collections/");
     } catch (error) {
       console.log(error);
     }
   }
 
   async addCard() {
+    //capture form data -- Card Title, DefinitionOne, DefinitionTwo
     try {
-      await axios.delete("http://localhost:5000/api/collections/");
+      await axios.post("http://localhost:5000/api/collections/");
     } catch (error) {
       console.log(error);
     }

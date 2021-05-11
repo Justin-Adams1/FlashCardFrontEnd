@@ -54,7 +54,10 @@ class App extends React.Component {
     if (cardsObject.cards) {
       const collectionResult = cardsObject.cards.map((card) => {
         return (
-          <Carousel.Item key={card.id}>    
+          <Carousel.Item key={card.id}>   
+          <button className ="modifyCard" onClick={()=>{this.modifyCard(cardsObject, card)}}>Modify</button>
+          <button className ="deleteCard" onClick={()=>{this.deleteCard(cardsObject, card)}}>Delete</button>
+          <br/><br/>
           <h2 className="nameStyle">{card.title}</h2>        
             <div>
                 {
@@ -73,6 +76,26 @@ class App extends React.Component {
       });
       return collectionResult;
     }
+  }
+  
+  async deleteCard(collection, card) {
+    try {
+      await axios.delete(
+        "http://localhost:5000/api/collections/" + collection._id + "/" + card._id
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async modifyCard(collection, card) {
+    //capture form data -- Card Title, DefinitionOne, DefinitionTwo
+
+    // try {
+    //   await axios.put("http://localhost:5000/api/collections/");
+    // } catch (error) {
+    //   console.log(error);
+    // }
   }
 
   componentDidMount() {
