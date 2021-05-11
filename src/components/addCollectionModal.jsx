@@ -1,6 +1,8 @@
-import React from 'react'
-import { Button, Modal, Form } from 'react-bootstrap'
+import React from 'react';
+import { Button, Modal, Form } from 'react-bootstrap';
 import "./card.css";
+import fetch from 'fetch';
+import axios from 'axios';
 
 class BootstrapModal extends React.Component{
 
@@ -14,6 +16,7 @@ class BootstrapModal extends React.Component{
     handleModalShowHide() {
         this.setState({ showHide: !this.state.showHide })
     }
+    
 
     render(){
         return(
@@ -27,10 +30,10 @@ class BootstrapModal extends React.Component{
                     <Modal.Title>Add Collection</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Form>
+                        <Form id="addCollection">
                             <Form.Group controlId="CollectionTitle">
                             <Form.Label>Collection Title</Form.Label>
-                            <Form.Control type="text" placeholder="New Collection name Here" />
+                            <Form.Control type="text"  id="name" placeholder="New Collection name Here" />
                             </Form.Group>
                             <Button variant="primary" type="submit">
                             Submit

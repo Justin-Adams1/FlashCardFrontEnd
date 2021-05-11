@@ -27,7 +27,7 @@ class BootstrapModal extends React.Component{
                     <Modal.Title>Add Card</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Form>
+                        <Form id="cardData">
                             <Form.Group controlId="cardTitle">
                             <Form.Label>Card Title</Form.Label>
                             <Form.Control type="text" placeholder="New Card Title Here" />

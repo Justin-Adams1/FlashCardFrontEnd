@@ -43,15 +43,8 @@ class Menu extends React.Component {
     //   console.log(error);
     // }
   }
-
-  async addCollection() {
-    //capture form data -- Collection Name, unsure how to package JSON data correctly from here into the axios request.
-    // try {
-    //   await axios.post("http://localhost:5000/api/collections/");
-    // } catch (error) {
-    //   console.log(error);
-    // }
-  }
 }
+
+
 
 export default Menu;
