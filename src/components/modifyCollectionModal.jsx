@@ -37,14 +37,6 @@ class BootstrapModal extends React.Component{
                             </Button>
                         </Form>
                     </Modal.Body>
-                    <Modal.Footer>
-                    <Button variant="secondary" onClick={() => this.handleModalShowHide()}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={() => this.handleModalShowHide()}>
-                        Save Changes
-                    </Button>
-                    </Modal.Footer>
                 </Modal>
             </div>
         )

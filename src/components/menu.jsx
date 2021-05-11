@@ -25,18 +25,18 @@ class Menu extends React.Component {
   }
 
   async deleteCollection(collectionId) {
-    // try {
-    //   await axios.delete(
-    //     "http://localhost:5000/api/collections/" + this.props.data._id
-    //   );
-    // } catch (error) {
-    //   console.log(error);
-    // }
-    // alert("Delete selected collection!");
+    try {
+      await axios.delete(
+        "http://localhost:5000/api/collections/" + this.props.data._id
+      );
+    } catch (error) {
+      console.log(error);
+    }
+    alert("Deleted selected collection!");
   }
 
   async modifyCollection() {
-    //capture form data -- Collection Name
+    //capture form data -- Collection Name, unsure how to package JSON data correctly from here into the axios request.
     // try {
     //   await axios.put("http://localhost:5000/api/collections/");
     // } catch (error) {
@@ -45,7 +45,7 @@ class Menu extends React.Component {
   }
 
   async addCollection() {
-    //capture form data -- Collection Name
+    //capture form data -- Collection Name, unsure how to package JSON data correctly from here into the axios request.
     // try {
     //   await axios.post("http://localhost:5000/api/collections/");
     // } catch (error) {

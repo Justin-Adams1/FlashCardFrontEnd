@@ -60,7 +60,7 @@ class App extends React.Component {
         return (
           <Carousel.Item key={card.id}>   
           <ButtonGroup>
-            <AddCardModal className ="addCard" onClick={()=>{this.modifyCard(cardsObject, card)}}>Add</AddCardModal>
+            <AddCardModal className ="addCard" onClick={()=>{this.addCard(cardsObject, card)}}>Add</AddCardModal>
             <ModifyCardModal className ="modifyCard" onClick={()=>{this.modifyCard(cardsObject, card)}}>Modify</ModifyCardModal>
             <Button className ="deleteCard" onClick={()=>{this.deleteCard(cardsObject, card)}}>Delete</Button>
           </ButtonGroup>
@@ -93,11 +93,11 @@ class App extends React.Component {
     } catch (error) {
       console.log(error);
     }
-    alert("Delete selected card!");
+    alert("Deleted selected card!");
   }
 
   async modifyCard(collection, card) {
-    //capture form data -- Card Title, DefinitionOne, DefinitionTwo
+    //capture form data -- Card Title, DefinitionOne, DefinitionTwo, unsure how to package JSON data correctly from here into the axios request.
 
     // try {
     //   await axios.put("http://localhost:5000/api/collections/");
@@ -107,7 +107,7 @@ class App extends React.Component {
   }
   
   async addCard() {
-    //capture form data -- Card Title, DefinitionOne, DefinitionTwo
+    //capture form data -- Card Title, DefinitionOne, DefinitionTwo, unsure how to package JSON data correctly from here into the axios request.
     // try {
     //   await axios.post("http://localhost:5000/api/collections/");
     // } catch (error) {

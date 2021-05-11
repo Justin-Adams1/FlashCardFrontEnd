@@ -36,23 +36,15 @@ class BootstrapModal extends React.Component{
                             <Form.Label>Definition One</Form.Label>
                             <Form.Control type="text" placeholder="Definition One" />
                             </Form.Group>
-                            <Form.Group controlId="DefinitionOne">
-                            <Form.Label>Definition One</Form.Label>
-                            <Form.Control type="text" placeholder="Definition One" />
+                            <Form.Group controlId="DefinitionTwo">
+                            <Form.Label>Definition Two</Form.Label>
+                            <Form.Control type="text" placeholder="Definition Two" />
                             </Form.Group>
                             <Button variant="primary" type="submit">
                             Submit
                             </Button>
                         </Form>
                     </Modal.Body>
-                    <Modal.Footer>
-                    <Button variant="secondary" onClick={() => this.handleModalShowHide()}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={() => this.handleModalShowHide()}>
-                        Save Changes
-                    </Button>
-                    </Modal.Footer>
                 </Modal>
             </div>
         )
