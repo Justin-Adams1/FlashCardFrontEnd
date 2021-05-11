@@ -1,12 +1,14 @@
 import React from "react";
 import axios from "axios";
 import "./App.css";
-import { Container, Row, Col, Carousel } from "react-bootstrap";
+import { Container, Row, Col, Carousel, ButtonGroup, Button} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Collection from "./components/collection";
 import Card from "./components/card";
 import Menu from "./components/menu";
+import AddCardModal from './components/addCardModal.jsx';
+import ModifyCardModal from './components/modifyCardModal.jsx';
 import "./components/card.css";
 
 class App extends React.Component {
@@ -21,6 +23,8 @@ class App extends React.Component {
     data: [],
     dataReady: false,
     cardSelection: [],
+    body: {},
+    isOpen: false
   };
   async apiCall() {
     try {
@@ -55,8 +59,11 @@ class App extends React.Component {
       const collectionResult = cardsObject.cards.map((card) => {
         return (
           <Carousel.Item key={card.id}>   
-          <button className ="modifyCard" onClick={()=>{this.modifyCard(cardsObject, card)}}>Modify</button>
-          <button className ="deleteCard" onClick={()=>{this.deleteCard(cardsObject, card)}}>Delete</button>
+          <ButtonGroup>
+            <AddCardModal className ="addCard" onClick={()=>{this.modifyCard(cardsObject, card)}}>Add</AddCardModal>
+            <ModifyCardModal className ="modifyCard" onClick={()=>{this.modifyCard(cardsObject, card)}}>Modify</ModifyCardModal>
+            <Button className ="deleteCard" onClick={()=>{this.deleteCard(cardsObject, card)}}>Delete</Button>
+          </ButtonGroup>
           <br/><br/>
           <h2 className="nameStyle">{card.title}</h2>        
             <div>
@@ -86,6 +93,7 @@ class App extends React.Component {
     } catch (error) {
       console.log(error);
     }
+    alert("Delete selected card!");
   }
 
   async modifyCard(collection, card) {
@@ -93,6 +101,15 @@ class App extends React.Component {
 
     // try {
     //   await axios.put("http://localhost:5000/api/collections/");
+    // } catch (error) {
+    //   console.log(error);
+    // }
+  }
+  
+  async addCard() {
+    //capture form data -- Card Title, DefinitionOne, DefinitionTwo
+    // try {
+    //   await axios.post("http://localhost:5000/api/collections/");
     // } catch (error) {
     //   console.log(error);
     // }
@@ -108,13 +125,13 @@ class App extends React.Component {
         <Container className="background" fluid>
           <Container>
             <Row>
-              <Col sm={{ span: 4, offset: 1 }} className="collectionElement">
+              <Col sm={{ span: 5, offset: 2 }} className="collectionElement">
                 <Collection
                   data={this.state.data}
                   buildCollectionSlide={this.buildCollectionSlide}
                 />
               </Col>
-              <Col sm={{ span: 5, offset: 1 }}>
+              <Col sm={{ span: 2, offset: 1 }}>
                 <Menu data={this.state.cardSelection} />
               </Col>
             </Row>

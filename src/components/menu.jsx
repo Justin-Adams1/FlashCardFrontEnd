@@ -1,88 +1,56 @@
 import React from "react";
 import axios from "axios";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Button} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./menu.css";
+import AddCollectionModal from './addCollectionModal.jsx';
+import ModifyCollectionModal from './modifyCollectionModal.jsx';
+import "./card.css";
 
 class Menu extends React.Component {
   render() {
     return (
       <Container fluid>
         <Row>
-          <button
-            type="button"
-            className="menuElement"
-            data-toggle="modal"
-            data-target="#ModalAddCollection"
-          >
-            ADD Collection
-          </button>
-          <button
-            type="button"
-            className="menuElement"
-            data-toggle="modal"
-            data-target="#ModalAddCard"
-          >
-            ADD Card
-          </button>
+          <AddCollectionModal className="menuElement"></AddCollectionModal>
         </Row>
         <Row>
-          <button
-            type="button"
-            className="menuElement"
-            data-toggle="modal"
-            data-target="#ModalModifyCollection"
-          >
-            MODIFY Collection
-          </button>
+          <ModifyCollectionModal className="menuElement"></ModifyCollectionModal>
         </Row>
         <Row>
-          <button
-            className="menuElement"
-            onClick={() => this.deleteCollection(this.props.id)}
-          >
-            DELETE Collection
-          </button>
+          <Button className="menuElement" onClick={()=>{this.deleteCollection(this.props.data._id)}}>Delete Collection</Button>
         </Row>
       </Container>
     );
   }
 
   async deleteCollection(collectionId) {
-    try {
-      await axios.delete(
-        "http://localhost:5000/api/collections/" + this.props.data._id
-      );
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   await axios.delete(
+    //     "http://localhost:5000/api/collections/" + this.props.data._id
+    //   );
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    // alert("Delete selected collection!");
   }
 
   async modifyCollection() {
     //capture form data -- Collection Name
-    try {
-      await axios.put("http://localhost:5000/api/collections/");
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   await axios.put("http://localhost:5000/api/collections/");
+    // } catch (error) {
+    //   console.log(error);
+    // }
   }
 
   async addCollection() {
     //capture form data -- Collection Name
-    try {
-      await axios.post("http://localhost:5000/api/collections/");
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async addCard() {
-    //capture form data -- Card Title, DefinitionOne, DefinitionTwo
-    try {
-      await axios.post("http://localhost:5000/api/collections/");
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   await axios.post("http://localhost:5000/api/collections/");
+    // } catch (error) {
+    //   console.log(error);
+    // }
   }
 }
 

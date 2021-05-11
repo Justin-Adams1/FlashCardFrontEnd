@@ -30,13 +30,19 @@
   
 .deleteCard {
     text-align: left;
-    position: absolute;
     top: 0px;
-    left: 130px;
+    background-color: white;
+    color: black;
   }
 .modifyCard {
     text-align: left;
-    position: absolute;
     top: 0px;
-    left: 70px;
+    background-color: white;
+    color: black;
+}
+.addCard {
+    text-align: left;
+    top: 0px;
+    background-color: white;
+    color: black;
 }
