@@ -12,7 +12,7 @@ import ModifyCardModal from './components/modifyCardModal.jsx';
 import "./components/card.css";
 
 class App extends React.Component {
-  constructor(props) {
+  constructor(props) {                              
     super(props);
     this.buildCollectionSlide = this.buildCollectionSlide.bind(this);
     this.selectCollection = this.selectCollection.bind(this);
